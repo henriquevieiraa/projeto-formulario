@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <form action="cadastro.php" autocomplete="on" method="post">
+        <div class="container">
+            <label for="inome">Nome * </label>
+            <input type="text" placeholder="Nome Completo" required autocomplete="name">
+        </div>
+
+        <div class="container">
+            <label for="data">Data de Nascimento * </label>
+            <input type="date" required autocomplete="bday-day">
+        </div>
+
+        <div class="container">
+            <label for="iemail">Email * </label>
+            <input type="email" name="email" id="iemail" required placeholder="Endereço de email" autocomplete="email">
+        </div>
+
+        <div class="container">
+            <label for="itel">Telefone * </label>
+            <input type="tel" name="tel" id="itel" required min="13" max="13" placeholder="(11) 91234-5678" autocomplete="tel" pattern="!\(\d{2}\)\d{4,5}-\d{4}$">
+        </div>
+
+        <div class="container">
+            <label for="fav-color">Cor Preferida: </label>
+            <input type="color" name="cor" id="fav-color">
+        </div>
+
+        <div class="container">
+            <label for="comida">Comida preferida *</label>
+            <select name="comida" id="comida" required>
+                <option value="" disabled selected>Selecione</option>
+                    <option >Lasanha</option>
+                    <option>Macarrão</option>
+                    <option>Churrasco</option>
+                    <option>Nhoque</option>
+                    <option>Pizza</option>
+                    <option>Hamburguer</option>
+                    <option>Sushi</option>
+                    <option>Strogonoff</option>
+                    <option>Paella</option>
+                    <option>Parmegiana</option>
+            </select>
+        </div>
+
+        <div class="container">
+            <label for="esporte">Qual seu esporte preferido?</label>
+            <input type="text" name="esporte" id="time" list="listaEsportes">
+            <datalist id="listaEsportes">
+                <option>Futebol</option>
+                <option>Vôlei</option>
+                <option>Basquete</option>
+                <option>Handebol</option>
+                <option>Skate</option>
+            </datalist>
+        </div>
+
+        <div class="container">
+            <label for="investimento">Investimento mensal(R$)</label>
+            <input type="range" name="investimento" id="investimento" min="100" max="3000" value="500" step="50" oninput="saida.value = this.value">  
+            <output id="saida">500</output>                  
+        </div>
+
+        <div class="container">
+            <fieldset>
+                <legend>Fluente em: </legend>
+                <label for="ingles"><input type="checkbox" name="ingles" id="ingles">Inglês</label>
+            
+                <label for="mandarim"><input type="checkbox" name="mandarim" id="mandarim">Mandarim</label>
+            
+                <label for="espanhol"><input type="checkbox" name="espanhol" id="espanhol">Espanhol</label>
+            
+                <label for="frances"><input type="checkbox" name="frances" id="frances">Francês</label>
+        
+                <label for="alemao"><input type="checkbox" name="alemao" id="alemao">Alemão</label>
+            </fieldset>
+        </div>
+
+        <fildset>
+            <legend>Gênero *</legend>
+            <label for="masc"><input type="radio" name="sexo" id="masc" value="Masculino">Masculino</label>
+
+            <label for="fem"><input type="radio" name="sexo" id="fem" value="Feminino">Feminino</label>
+
+            <label for="no-info"><input type="radio" name="sexo" id="no-info" value="Prefiro não informar">Prefiro não informar</label>           
+        </fildset>
+
+        <div class="container">
+            <label for="obs">Observação: </label><br>
+            <textarea name="observacao" id="obs" cols="30" rows="10" placeholder="Digite sua mensagem..."></textarea>
+        </div>
+
+        <div class="botao">
+            <button type="reset">Limpar</button>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
